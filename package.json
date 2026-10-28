@@ -1,0 +1,24 @@
+{
+  "name": "skills-swap-tannerallen-unit8",
+  "version": "1.0.0",
+  "description": "Skill Swap is a community platform concept where people can exchange knowledge, share the skills they have, and learn skills from others.",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TLAllen662/skills-swap-TannerAllen-unit8.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/TLAllen662/skills-swap-TannerAllen-unit8/issues"
+  },
+  "homepage": "https://github.com/TLAllen662/skills-swap-TannerAllen-unit8#readme",
+  "devDependencies": {
+    "jest": "^30.5.2"
+  }
+}
