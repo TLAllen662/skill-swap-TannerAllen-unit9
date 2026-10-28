@@ -6,6 +6,7 @@
     <meta name="description" content="Skill Swap helps people learn from one another by sharing their skills.">
     <title>Skill Swap</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="api-service.js" defer></script>
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -30,9 +31,28 @@
       <section class="offerings" id="offerings" aria-labelledby="offerings-title">
         <h2 id="offerings-title">Skill offerings</h2>
         <p>Discover skills shared by members of your community.</p>
-        <div class="offering-placeholder">
-          <h3>Skill listings coming soon</h3>
-          <p>Check back to find a skill to learn or share one of your own.</p>
+        <form id="skill-form" class="skill-form">
+          <h3>Share a skill</h3>
+          <label for="skill-title">Title</label>
+          <input id="skill-title" name="title" type="text" required>
+
+          <label for="skill-category">Category</label>
+          <input id="skill-category" name="category" type="text" required>
+
+          <label for="skill-price">Price ($)</label>
+          <input id="skill-price" name="price" type="number" min="0" step="0.01" required>
+
+          <label for="skill-description">Description</label>
+          <textarea id="skill-description" name="description" rows="3" required></textarea>
+
+          <button type="submit">Add skill</button>
+          <p id="form-status" class="form-status" role="status"></p>
+        </form>
+
+        <div id="skills-list" class="skills-list" aria-live="polite">
+          <div class="offering-placeholder">
+            <h3>Loading skills…</h3>
+          </div>
         </div>
       </section>
     </main>
