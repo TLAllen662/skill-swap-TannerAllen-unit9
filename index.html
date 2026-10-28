@@ -6,6 +6,7 @@
     <meta name="description" content="Skill Swap helps people learn from one another by sharing their skills.">
     <title>Skill Swap</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="api-service.js" defer></script>
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -30,9 +31,10 @@
       <section class="offerings" id="offerings" aria-labelledby="offerings-title">
         <h2 id="offerings-title">Skill offerings</h2>
         <p>Discover skills shared by members of your community.</p>
-        <div class="offering-placeholder">
-          <h3>Skill listings coming soon</h3>
-          <p>Check back to find a skill to learn or share one of your own.</p>
+        <div id="skills-list" class="skills-list" aria-live="polite">
+          <div class="offering-placeholder">
+            <h3>Loading skills…</h3>
+          </div>
         </div>
       </section>
     </main>

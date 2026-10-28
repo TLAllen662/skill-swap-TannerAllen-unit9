@@ -102,6 +102,35 @@ h1 {
   background: #fff;
 }
 
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.skills-list .offering-placeholder {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+
+.skill-card {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.skill-card h3 {
+  margin: 0 0 0.5rem;
+  color: #176b57;
+}
+
+.skill-meta {
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
 footer {
   padding: 1.5rem;
   color: #fff;
