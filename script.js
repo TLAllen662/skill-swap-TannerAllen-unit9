@@ -59,4 +59,36 @@ async function initSkills() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", initSkills);
+async function handleSkillSubmit(event) {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const status = document.getElementById("form-status");
+  const submitButton = form.querySelector("button[type='submit']");
+  const formData = new FormData(form);
+
+  const skillData = {
+    title: formData.get("title").trim(),
+    category: formData.get("category").trim(),
+    price: Number(formData.get("price")),
+    description: formData.get("description").trim(),
+  };
+
+  submitButton.disabled = true;
+  status.textContent = "Saving...";
+
+  try {
+    await window.apiService.createSkill(skillData);
+    form.reset();
+    status.textContent = "Skill added!";
+    await initSkills();
+  } catch (error) {
+    status.textContent = "Could not add the skill. Please try again.";
+  } finally {
+    submitButton.disabled = false;
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("skill-form").addEventListener("submit", handleSkillSubmit);
+  initSkills();
+});
